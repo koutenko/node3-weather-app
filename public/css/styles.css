@@ -45,6 +45,10 @@ body {
     text-align: center;
 }
 
+.about {
+    font-family: 'Quattrocento Sans', sans-serif;
+}
+
 h1 {
     font-family: 'Patrick Hand', cursive;
     font-size: 64px;
