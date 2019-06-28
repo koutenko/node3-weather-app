@@ -35,17 +35,8 @@ app.get('', (req, res) => {
 // About page
 app.get('/about', (req, res) => {
     res.render('about', {
-        title: 'About Me',
+        title: 'about',
         name: 'Jimin McClain'
-    })
-})
-
-// Help page
-app.get('/help', (req, res) => {
-    res.render('help', {
-        title: 'Help',
-        name: 'Jimin McClain',
-        message: 'This is a help page.'
     })
 })
 
@@ -77,13 +68,6 @@ app.get('/weather', (req, res) => {
 })
 
 // 404 wildcards
-app.get('/help/*', (req, res) => {
-    res.render('404', {
-        title: '404',
-        error: 'Help article not found.',
-        name: 'Jimin McClain'})
-})
-
 app.get('*', (req, res) => {
     res.render('404', {
         title: '404',
