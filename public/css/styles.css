@@ -1,12 +1,26 @@
 header {
     margin-top: 16px;
     margin-bottom: 48px;
+    text-align: center;
 }
 
 header a {
-    color: #888888;
-    margin-right: 16px;
+    color: #333333;
+    font-size: 12px;
+    margin-right: 10px;
     text-decoration: none;
+    
+}
+
+.active {
+    color: #888888;
+}
+
+.nav {
+    width: 100%;
+    font-family: 'Changa', sans-serif;
+    padding: 1px;
+    display: inline-block;
 }
 
 body {
@@ -23,9 +37,16 @@ body {
 
 .main-content {
     flex-grow: 1;
+    text-align: center;
+}
+
+.search {
+    width: 100%;
+    text-align: center;
 }
 
 h1 {
+    font-family: 'Patrick Hand', cursive;
     font-size: 64px;
     margin-bottom: 16px;
 }
@@ -34,18 +55,56 @@ h1 {
     width: 250px;
 }
 
-input {
+.ghost-input {
+    display: inline-block;
+    font-weight:300;
+    width: 100%;
+    font-size: 14px;
+    border: 1px;
+    outline: 1px;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    color: #4b545f;
+    background: #fff;
+    font-family: 'Changa',Verdana;
+    padding: 10px 15px;
+    margin: 10px 5px;
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    -ms-transition: all 0.1s ease-in-out;
+    -o-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;
+    /*width: 100%;
+    font-family: 'Changa', sans-serif;
     border: 1px solid #cccccc;
-    padding: 8px;
+    padding: 8px;*/
 }
 
-button {
-    cursor: pointer;
-    border: 1px solid #888888;
-    background: #888888;
-    color: white;
-    padding: 8px
-}
+.ghost-input:focus {
+     border-bottom:1px solid #ddd;
+  }
+
+.ghost-button {
+    background-color: transparent;
+    border:2px solid #ddd;
+    font-family: 'Changa', sans-serif;
+    padding:10px 30px;
+    width: 100%;
+    /*min-width: 350px;*/
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    -ms-transition: all 0.1s ease-in-out;
+    -o-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;
+    white-space: normal;
+  }
+
+  .ghost-button:hover {
+    border:2px solid #515151;
+    white-space: normal;
+  }
 
 footer {
     color: #888888;
@@ -55,3 +114,35 @@ footer {
     font-size: 10px;
 }
 
+#message-one {
+    font-weight: bold;
+    font-family: 'Quattrocento Sans', sans-serif;
+    width: 90%;
+}
+
+#message-two {
+    font-family: 'Quattrocento Sans', sans-serif;
+    width: 90%;
+}
+
+/* Tablet Landscape */
+@media screen and (max-width: 1060px) {
+    .main-content { width: 67%; }
+    .ghost-input { width: 100%; }
+    .ghost-button { width: 100% }
+    .ghost-button:hover { width: 100% }
+}
+/* Tabled Portrait */
+@media screen and (max-width: 768px) {
+    .main-content { width:100%; }
+    .ghost-input { width: 100%; }
+    .ghost-button { width: 70% }
+    .ghost-button:hover { width: 100% }
+}
+
+@media screen and (max-width: 481px) {
+    .main-content { width: 100%; }
+    .ghost-input { width: 100%; }
+    .ghost-button { width: 100% }
+    .ghost-button:hover { width: 100% }
+}

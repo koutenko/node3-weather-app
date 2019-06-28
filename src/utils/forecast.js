@@ -5,17 +5,15 @@ const forecast = (latitude, longitude, callback) => {
 
     request({ url, json: true }, (error, { body }) => {
         if (error) {
-            callback('Unable to connect to weather services!', undefined)
+            let err = 'Unable to connect to weather services!'
+            callback(err, undefined)
         } else if (body.error) {
-            callback('Unable to find weather information. Try another search.', undefined)
+            let err = 'Unable to find weather information. Try another search.'
+            callback(err, undefined)
         } else {
-            callback(undefined, 'It is '+ body.currently.temperature + ' degrees outside. ' + body.daily.data[0].summary + ' There is ' + (body.currently.humidity * 100) + '% humidity. Chance of rain is ' + body.currently.precipProbability + '%.')
-            // callback(undefined, {
-            //     temperature: body.currently.temperature,
-            //     summary: body.daily.data[0].summary,
-            //     humidity: body.currently.humidity,
-            //     chanceOfRain: body.currently.precipProbability
-            // })
+            let weatherText = ' It is ' + Math.round(body.currently.temperature) + ' degrees Celsius outside. \r\n' + body.daily.data[0].summary + '\r\n There is ' + Math.round(body.currently.humidity * 100) + '% humidity. \r\n Chance of rain is ' + Math.round(body.currently.precipProbability * 100) + '%.'
+
+            callback(undefined, weatherText)
         }
     })
 }

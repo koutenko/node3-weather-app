@@ -3,6 +3,8 @@ const express = require('express')
 const hbs = require('hbs')
 const geocode = require('./utils/geocode')
 const forecast = require('./utils/forecast')
+const http = require('http')
+const url = require('url')
 
 const app = express()
 const port = process.env.PORT || 3000
@@ -24,7 +26,7 @@ app.use(express.static(publicDirectoryPath))
 // Home page
 app.get('', (req, res) => {
     res.render('index', {
-        title: 'Weather App',
+        title: 'cloudtiger',
         name: 'Jimin McClain',
         geocode
     })

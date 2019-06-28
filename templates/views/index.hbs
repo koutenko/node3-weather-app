@@ -2,23 +2,29 @@
 
 <html>
     <head>
-        <title>Weather App</title>
+        <title>cloudtiger weather app</title>
         <link rel="stylesheet" href="/css/styles.css">
         <link rel="icon" href="/img/weather.png">
+        <link href="https://fonts.googleapis.com/css?family=Changa|Patrick+Hand|Quattrocento+Sans&display=swap" rel="stylesheet">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="HandheldFriendly" content="true">
         
     </head>
 
     <body>
         <div class="main-content">
             {{>header}}
-            <p>Use this site to get your weather.</p>
 
-            <form>
-                <input placeholder="Location">
-                <button>
-                    Search
-                </button>
-            </form>
+            <div class="search">
+                <form>
+                    <input class="ghost-input" placeholder="please enter your location">
+                    <button class="ghost-button">
+                        search
+                    </button>
+                </form>
+            </div>
+            
 
             <p id="message-one">
 
